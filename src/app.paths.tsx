@@ -8,7 +8,7 @@ class AppRoutes {
    * The AppRoutes's constructor should always be private to prevent direct
    * construction calls with the `new` operator.
    */
-  private constructor() {}
+  private constructor() { }
   /**
    * The static method that controls the access to the singleton instance.
    * This implementation let you subclass the Singleton class while keeping
@@ -26,23 +26,39 @@ class AppRoutes {
     return "/";
   }
 
-  getExamplePagePath():string{
+  getExamplePagePath(): string {
     return `/address/:addressId/view`;
   }
 
-  getExamplePageUrl():string{
+  getExamplePageUrl(): string {
     return this.getExamplePagePath();
   }
 
   // Example on a path with dynamic variables
-  getExampleByIdPagePath():string{
+  getExampleByIdPagePath(): string {
     return `/example/:id`;
   }
 
-  getExampleByIdPageUrl(id:string):string{
-    return this.getExampleByIdPagePath().replace(':id',id);
+  getExampleByIdPageUrl(id: string): string {
+    return this.getExampleByIdPagePath().replace(':id', id);
   }
-  // ./Example
+  // about us
+
+
+  getAboutUsPagePath(): string {
+    return `/about-us`;
+  }
+  getAboutUsPageUrl(): string {
+    return this.getAboutUsPagePath();
+  }
+
+  // contact us 
+  getContactUsPagePath(): string {
+    return `/contact-us`;
+  }
+  getContactUsPageUrl(): string {
+    return this.getContactUsPagePath();
+  }
 }
 
 export const appRoutesObj = AppRoutes.getInstance();
